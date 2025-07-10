@@ -5,6 +5,7 @@ export default function Register() {
     const [user, setUser] = useState({})
     const [error, setError] = useState()
     const [login,setLogin] = useState({})
+    const [loginerror,setLoginerror]=useState()
     const API_URL = import.meta.env.VITE_API_URL;
     const handleSubmit = async () => {
         try {
@@ -17,16 +18,16 @@ export default function Register() {
             setError("Something Went Wrong")
         }
     }
-    
+
    const handlelogin = async () => {
         try {
             const url = `${API_URL}api/users/login`;
             // const url="https://cafebackend-omega.vercel.app/api/users/register";
             const result = await axios.post(url, user)
-            setError("Login Successfully")
+            setLoginerror("Login Successfully")
         } catch (error) {
             console.log(error);
-            setError("Login Failed")
+            setLoginerror("Login Failed")
         }
     }
 
