@@ -23,7 +23,7 @@ export default function Register() {
         try {
             const url = `${API_URL}api/users/login`;
             // const url="https://cafebackend-omega.vercel.app/api/users/register";
-            const result = await axios.post(url, user)
+            const result = await axios.post(url, login)
             setLoginerror("Login Successfully")
         } catch (error) {
             console.log(error);
