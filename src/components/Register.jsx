@@ -55,13 +55,13 @@ export default function Register() {
         </div>
         <div>
             <h2>Login Form</h2>
-            {error}
+            {loginerror}
                         <p>
-                <input type="email" placeholder="Email Name" onChange={(e) => setUser({ ...user, email: e.target.value })} />
+                <input type="email" placeholder="Email Name" onChange={(e) => setLogin({ ...user, email: e.target.value })} />
             </p>
 
             <p>
-                <input type="password" placeholder="New Password" onChange={(e) => setUser({ ...user, password: e.target.value })} />
+                <input type="password" placeholder="New Password" onChange={(e) => setLogin({ ...user, password: e.target.value })} />
             </p>
             <p>
                 <button onClick={handlelogin}>Submit</button>
