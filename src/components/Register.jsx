@@ -16,6 +16,17 @@ export default function Register() {
             setError("Something Went Wrong")
         }
     }
+    const handlelogin = async () => {
+        try {
+            const url = `${API_URL}api/users/register`;
+            // const url="https://cafebackend-omega.vercel.app/api/users/register";
+            const result = await axios.post(url, user)
+            setError("Data saved Successfully")
+        } catch (error) {
+            console.log(error);
+            setError("Something Went Wrong")
+        }
+    }
     return (
         <div>
             <h2>Registration Form</h2>
@@ -35,6 +46,18 @@ export default function Register() {
             </p>
             <p>
                 <button onClick={handleSubmit}>Submit</button>
+            </p>
+
+            <h2>Login Form</h2>
+                        <p>
+                <input type="text" placeholder="Email Name" onChange={(e) => setUser({ ...user, email: e.target.value })} />
+            </p>
+
+            <p>
+                <input type="password" placeholder="New Password" onChange={(e) => setUser({ ...user, password: e.target.value })} />
+            </p>
+            <p>
+                <button onClick={handlelogin}>Submit</button>
             </p>
         </div>
     )
