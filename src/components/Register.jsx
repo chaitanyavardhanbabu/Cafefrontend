@@ -21,7 +21,7 @@ export default function Register() {
 
    const handlelogin = async () => {
         try {
-            const url = `${API_URL}api/users/login`;
+            const url = `${API_URL}/api/users/login`;
             // const url="https://cafebackend-omega.vercel.app/api/users/register";
             const result = await axios.post(url, login)
             setLoginerror("Login Successfully")
